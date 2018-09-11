@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block titulo %}
+<title>lista perfil</title>
+{% endblock %}
+{% block contenido %}
+
+<h1>Lista de Perfiles</h1>
+{% for p in listap %}
+
+    Nombre: {{p.nombre}}
+    Imagen: <img src="/media/{{ p.foto }}" width="200"> <br>
+
+{% endfor %}
+
+{% endblock %}

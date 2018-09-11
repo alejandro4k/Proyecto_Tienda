@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block tituolo %}
+<title>Ver Productos</title>
+    {{ p.nombre }}
+{% endblock %}
+{% block contenido %}
+
+    <h1>Detalle</h1>
+    <p><b>Precio:</b> $ {{ p.precio }} </p>
+    <p><b>Stock:</b> {{ p.stock }} unidades</p>
+    <p><b>Marca:</b> {{ p.marca }} </p>
+
+    {% for c in categorias %}
+        <span class="label label-info"> {{ c.nombre }} </span>
+    {% endfor %}   
+    
+    {% if p.categoria.all %}
+        <h2>Categorias</h2>
+        {% for pc in p.categorias.all %}
+            {{pc}}
+        {% endfor %}
+    {% else %}
+        <h3>Sin Categorias</h3>
+    {% endif %}
+    <br>
+    <a href="{% url 'vista_lista_producto' %}">Regresar a la lista</a>
+
+{% endblock %}
+

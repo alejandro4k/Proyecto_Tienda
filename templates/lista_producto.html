@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block titulo %}
+    <title>Lista Producto</title>
+{% endblock %}    
+
+
+{% block contenido %}
+    <h1>Lista de Productos</h1>
+
+    <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for p in lista %}
+                    <tr>
+                        <th scope="row">{{ p.nombre }}</th>
+                        <td>{{ p.precio }}</td>
+                        <td>{{ p.stock }}</td>
+                        <td>{{ p.marca }}</td>
+                        <td><a class="btn btn-primary" href="/ver_producto/{{p.id}}" >Detalle</a>
+                        {% if user.is_authenticated and user.is_superuser %}
+                          <a class="btn btn-primary" href="/editar_producto/{{p.id}}" >Editar</a>
+                          <a class="btn btn-primary" href="/eliminar_producto/{{p.id}}" >Eliminar</a></td>
+                        {% endif %}
+                      </tr>
+                   
+                {% endfor %}
+              
+              
+              </tr>
+            </tbody>
+          </table>
+          
+
+   
+{% endblock %}   
+    

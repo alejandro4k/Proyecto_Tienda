@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+</head>
+<body>
+        <h2>{{ msj }} </h2>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ formulario.as_p }}
+    
+            <input type="submit" value="Registrarse">
+    
+        </form>
+    
+    
+</body>
+</html>
+
+    

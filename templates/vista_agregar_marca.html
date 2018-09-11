@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+
+{% block titulo %}
+    
+    <title>Formularrio</title>
+    
+{% endblock  %}
+    
+    
+
+{% block contenido %}
+<div class="formdiv">
+
+    <form action="" method="POST" enctype="multipart/from-data">
+        {% csrf_token %}
+        {{ formulario.as_p }}
+        <input class="btn btn-primary" type="submit" value="Guardar">
+
+    </form>
+</div>
+{% endblock %}

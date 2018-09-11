@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block titulo %}
+<title>Marcas</title>
+{% endblock %}
+{% block contenido %}
+<h1>Lista de Marcas</h1>
+<table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+
+            {% for p in listam %}
+            <tr>
+                    <th scope="row"> {{p.nombre}}</th>
+                    <td> <a class="btn btn-primary" href="/eliminar_marca/{{p.id}}">Eliminar</a></td>
+            </tr>
+               
+            
+            {% endfor %}
+        </tbody>
+        
+    </table>
+
+
+
+{% endblock %}
