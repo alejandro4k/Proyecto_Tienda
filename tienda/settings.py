@@ -25,7 +25,7 @@ SECRET_KEY = ')$qj(fc179p7gpj8rjgm@m9v-@i4%#zv+_vr#9kptj+3uvhiug'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tieda123.herokuapp.com']
+ALLOWED_HOSTS = ['adsitienda2.herokuapp.com']
 
 
 # Application definition
