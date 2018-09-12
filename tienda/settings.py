@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'webservice',
     'rest_framework',
     'gunicorn',
-    'psycopg2',
 ]
 
 MIDDLEWARE = [
@@ -80,12 +79,8 @@ WSGI_APPLICATION = 'tienda.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'daq4o4p516uud5',
-        'USER': 'chqfghzxzlyiop',
-        'PASSWORD': '0f062a94ef1d46f087a8dc6457e04aa5e9be1762869b322da48f271493c25736',
-        'HOST': 'ec2-174-129-32-37.compute-1.amazonaws.com',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
        
     }
 }
